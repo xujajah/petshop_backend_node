@@ -19,6 +19,7 @@ router.post('/ask', passport.authenticate('jwt', {session: false}), function (re
     })
 })
 
+
 router.post('/answer/:id', passport.authenticate('jwt', {session: false}), function (req, res) {
     let comment = {
         text: req.body.text,
