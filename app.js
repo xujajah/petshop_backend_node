@@ -21,6 +21,7 @@ mongoose.connection.on('error', error => console.log(error) );
 mongoose.Promise = global.Promise;
 
 require('./auth/auth');
+
 app.use( bodyParser.urlencoded({ extended : false }) );
 
 

@@ -23,11 +23,13 @@ router.post('/ad', passport.authenticate('jwt', {session: false}), upload.single
     let newAd = new AdModel(
         {
             owner: req.user._id,
+
+            name: req.body.name,
             phone: req.body.phone,
             price: req.body.price,
             description: req.body.description,
             title: req.body.title,
-            type: req.body.title,
+            type: req.body.type,
             city: req.body.city,
             category: req.body.category,
             img: {
@@ -55,6 +57,7 @@ router.get('/', function (req, res, next) {
         if (err) {
             return res.json({error: err})
         } else {
+            console.log(result);
             return res.json(result)
         }
     })

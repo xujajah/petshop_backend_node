@@ -21,9 +21,10 @@ router.post('/ask', passport.authenticate('jwt', {session: false}), function (re
 
 router.post('/answer/:id', passport.authenticate('jwt', {session: false}), function (req, res) {
     let comment = {
-        text: req.body.answer,
+        text: req.body.text,
         author: req.user._id
     }
+    console.log(comment);
     DiscussionModel.update({_id: req.params.id}, {$push: {comments: comment}}, function (err, data) {
         if (err) {
             return res.json({error: err})
