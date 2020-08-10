@@ -23,12 +23,6 @@ mongoose.Promise = global.Promise;
 require('./auth/auth');
 
 app.use( bodyParser.urlencoded({ extended : false }) );
-
-
-const secureRoute = require('./routes/secureRoutes');
-
-app.use('/user', passport.authenticate('jwt', { session : false }), secureRoute );
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
