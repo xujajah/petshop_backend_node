@@ -10,6 +10,7 @@ let passport = require('passport');
 let indexRouter = require('./routes/index');
 let shopRouter = require('./routes/shop');
 let discussion = require('./routes/discussion');
+let contact = require('./routes/contact');
 
 let app = express();
 
@@ -32,5 +33,6 @@ app.use(cors())
 app.use('/', indexRouter);
 app.use('/shop', shopRouter);
 app.use('/discuss', discussion);
+app.use('/contact', contact);
 
 module.exports = app;
