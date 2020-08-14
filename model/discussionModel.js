@@ -8,7 +8,7 @@ const DisSchema = new Schema({
     },
     question: {
         type: String,
-        required: true
+        required: true,
     },
     comments: [{
         text: String,
