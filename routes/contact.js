@@ -1,5 +1,7 @@
 let express = require('express');
 let router = express.Router();
+
+require('dotenv').config();
 const nodemailer = require("nodemailer");
 
 
@@ -13,22 +15,22 @@ router.post("/",async function (req,res) {
 
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: "gator4219.hostgator.com",
+        host: 'smtp.gmail.com',
         port: 465,
-        secure: true, // true for 465, false for other ports
+        secure: true,
         auth: {
-            user: "jarvis@bitsgroove.com", // generated ethereal user
-            pass: "BitsGroove", // generated ethereal password
+            user: process.env.email, // generated ethereal user
+            pass: process.env.pass, // generated ethereal password
         },
     });
 
     let info = await transporter.sendMail({
         from: {
             name: 'Contact Form',
-            address: 'jarvis@bitsgroove.com'
+            address: 'xujajah@gmail.com'
         },
         replyTo: email,
-        to: "jarvis@bitsgroove.com",
+        to: "xujajah@gmail.com",
         subject: subject,
         text: message,
     });
