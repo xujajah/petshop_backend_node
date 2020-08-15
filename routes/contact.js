@@ -26,11 +26,11 @@ router.post("/",async function (req,res) {
 
     let info = await transporter.sendMail({
         from: {
-            name: 'Contact Form',
-            address: 'xujajah@gmail.com'
+            name: 'BluePaws Contact Form',
+            address: 'blue.paws.petshop@gmail.com'
         },
         replyTo: email,
-        to: "xujajah@gmail.com",
+        to: "blue.paws.petshop@gmail.com",
         subject: subject,
         text: message,
     });

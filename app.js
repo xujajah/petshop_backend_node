@@ -6,7 +6,6 @@ let cors = require('cors')
 let mongoose = require('mongoose');
 let passport = require('passport');
 
-
 let indexRouter = require('./routes/index');
 let shopRouter = require('./routes/shop');
 let discussion = require('./routes/discussion');
